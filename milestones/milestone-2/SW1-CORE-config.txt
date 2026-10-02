@@ -1,0 +1,45 @@
+hostname SW1-CORE
+ip routing
+!
+vlan 10
+ name MANAGEMENT
+vlan 20
+ name STAFF
+vlan 30
+ name SERVERS
+vlan 40
+ name CONTRACTOR
+!
+interface vlan 10
+ ip address 10.36.10.1 255.255.255.0
+ no shutdown
+interface vlan 20
+ ip address 10.36.20.1 255.255.255.0
+ no shutdown
+interface vlan 30
+ ip address 10.36.30.1 255.255.255.0
+ no shutdown
+interface vlan 40
+ ip address 10.36.40.1 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40
+!
+interface GigabitEthernet1/0/2
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/3
+ switchport mode access
+ switchport access vlan 40
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/4
+ no switchport
+ ip address 10.36.254.2 255.255.255.252
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.36.254.1

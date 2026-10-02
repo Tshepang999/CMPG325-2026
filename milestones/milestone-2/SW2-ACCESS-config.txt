@@ -1,0 +1,29 @@
+hostname SW2-ACCESS
+!
+vlan 10
+ name MANAGEMENT
+vlan 20
+ name STAFF
+vlan 30
+ name SERVERS
+vlan 40
+ name CONTRACTOR
+!
+interface FastEthernet0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
