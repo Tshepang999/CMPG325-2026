@@ -224,4 +224,7 @@ Your structural cloud submission directory is mapped using this schema:
 *   `test: document baseline local network and border gateway verification metrics`
 *   `fix: apply structural corrective action to resolve Fa0/3 workstation VLAN fault assignment`
 
-### Conclusion
+## 📌 Design Phase Conclusion
+The architectural planning phase for the Kgomotso Marketing & Advertising Agency successfully established our core Layer 2 and Layer 3 foundations. By selecting a structural Router-on-a-Stick design on the R1-EDGE gateway and mapping out the 10.36.0.0/16 departmental subnets, we created a scalable blueprint for network traffic processing. 
+
+All routing tables, trunk allocations, and foundational security definitions planned during this milestone have been carried forward, implemented, and fully verified. For the final operational results, live verification pings, and the technical defense logs of these systems, please refer directly to the comprehensive engineering records located inside the `/milestones/milestone-3/` directory.
